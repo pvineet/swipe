@@ -8,10 +8,20 @@
  * Controller of the swipeApp
  */
 angular.module('swipeApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope) {
+  	$scope.count = 0;
+  	$scope.onPanleft = function onHammer (event) {
+  		console.log(event.type);
+    	$scope.eventType = event.type;
+    	$scope.count--;
+    };
+    $scope.onPanright = function onHammer (event) {
+  		console.log(event.type);
+    	$scope.eventType = event.type;
+    	$scope.count++;
+    };
+    $scope.onTap = function onHammer (event) {
+  		console.log(event.type);
+    	$scope.eventType = event.type;
+    };
   });
